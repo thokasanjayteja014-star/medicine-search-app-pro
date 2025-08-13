@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Patient • Med Prescribe</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</head>
+<body>
+<header class="header">
+  <h1>Patient Dashboard</h1>
+  <p class="small">See prescriptions, chat with your doctor, and download PDF. <button id="logout" class="btn-secondary">Logout</button></p>
+</header>
+<div class="container">
+  <div id="prescriptions"></div>
+
+  <div class="card">
+    <h2>Chat with Doctor</h2>
+    <div class="grid-2">
+      <div><label>Doctor email</label><input id="chat-peer" type="email" placeholder="doctor@example.com"/></div>
+      <div style="align-self:end"><button id="open-chat">Open Chat</button></div>
+    </div>
+    <div class="chat" id="chat-box" style="display:none">
+      <div class="flex"><strong id="chat-with"></strong><span class="badge">Live</span></div>
+      <div class="chat-log" id="chat-log"></div>
+      <div class="flex">
+        <input id="chat-input" type="text" placeholder="Type a message"/>
+        <button id="chat-send">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="module" src="js/patient.js"></script>
+</body>
+</html>

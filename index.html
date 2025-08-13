@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Med Prescribe • Login</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header class="header">
+  <h1>Med Prescribe</h1>
+  <p class="small">Doctor–patient prescriptions with OTP login, chat & PDF export.</p>
+</header>
+<div class="container">
+  <div class="card">
+    <h2>Create account</h2>
+    <div class="grid-3">
+      <div><label>Name</label><input id="su-name" type="text" placeholder="Dr. Smith or John Doe"/></div>
+      <div><label>Role</label>
+        <select id="su-role"><option value="patient">Patient</option><option value="doctor">Doctor</option></select>
+      </div>
+      <div><label>Email</label><input id="su-email" type="email" placeholder="you@example.com"/></div>
+    </div>
+    <div class="grid-2">
+      <div><label>Password</label><input id="su-pass" type="password" placeholder="••••••••"/></div>
+      <div style="align-self:end"><button id="btn-signup">Sign up</button></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h2>Login (password)</h2>
+      <label>Email</label><input id="li-email" type="email"/>
+      <label>Password</label><input id="li-pass" type="password"/>
+      <div class="flex">
+        <button id="btn-login">Log in</button>
+        <button class="btn-secondary" id="btn-reset">Forgot password</button>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Login via OTP</h2>
+      <div class="grid-2">
+        <div>
+          <label>Email for OTP link</label><input id="otp-email" type="email" placeholder="you@example.com"/>
+          <div class="flex"><button id="btn-email-otp">Send email link</button></div>
+        </div>
+        <div>
+          <label>Phone for SMS OTP</label><input id="otp-phone" type="tel" placeholder="+91 98765 43210"/>
+          <div id="recaptcha-container" style="margin:8px 0"></div>
+          <div class="flex">
+            <button id="btn-phone-otp">Send SMS</button>
+            <input id="otp-code" type="text" placeholder="123456" style="max-width:160px"/>
+            <button id="btn-verify-otp" class="btn-secondary">Verify</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card center small">
+    <p>Educational use only. Not medical advice.</p>
+  </div>
+</div>
+<script type="module" src="js/auth.js"></script>
+</body>
+</html>

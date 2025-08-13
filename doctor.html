@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Doctor • Med Prescribe</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header class="header">
+  <h1>Doctor Dashboard</h1>
+  <p class="small">Create prescriptions, chat with patients. <button id="logout" class="btn-secondary">Logout</button></p>
+</header>
+<div class="container">
+  <div class="card">
+    <h2>New Prescription</h2>
+    <div class="grid-3">
+      <div><label>Patient email</label><input id="p-email" type="email" placeholder="patient@example.com"/></div>
+      <div><label>Disease</label><input id="disease" type="text" placeholder="e.g., fever, diabetes"/></div>
+      <div style="align-self:end" class="flex">
+        <button id="btn-fetch">Auto-fill advice</button>
+        <button id="btn-suggest-meds" class="btn-secondary">Suggest meds</button>
+        <button id="btn-add-row" class="btn-secondary">Add row</button>
+      </div>
+    </div>
+    <div class="card">
+      <table class="table" id="med-table">
+        <thead><tr><th>Medicine</th><th>Dosage</th><th>When</th><th>Freq/Duration</th><th>Notes</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="grid-2">
+      <div class="card"><strong>Precautions</strong><textarea id="precautions"></textarea></div>
+      <div class="card"><strong>Food & Lifestyle</strong><textarea id="food"></textarea></div>
+    </div>
+    <div class="flex"><button id="btn-save">Save Prescription</button></div>
+    <p class="small">Overview: <span id="overview"></span></p>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h2>Your Recent Prescriptions</h2>
+      <div id="my-list"></div>
+    </div>
+    <div class="card">
+      <h2>Chat</h2>
+      <div class="grid-2">
+        <div>
+          <label>Patient email</label>
+          <input id="chat-email" type="email" placeholder="patient@example.com"/>
+        </div>
+        <div style="align-self:end"><button id="open-chat">Open Chat</button></div>
+      </div>
+      <div class="chat" id="chat-box" style="display:none">
+        <div class="flex"><strong id="chat-with"></strong><span class="badge">Live</span></div>
+        <div class="chat-log" id="chat-log"></div>
+        <div class="flex">
+          <input id="chat-input" type="text" placeholder="Type a message"/>
+          <button id="chat-send">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="module" src="js/doctor.js"></script>
+</body>
+</html>
